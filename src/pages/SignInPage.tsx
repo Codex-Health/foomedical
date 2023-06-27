@@ -9,8 +9,8 @@ export function SignInPage(): JSX.Element {
     <SimpleGrid cols={2}>
       <Box pt={100} pb={200}>
         <SignInForm
-          projectId={MEDPLUM_PROJECT_ID}
-          googleClientId={MEDPLUM_GOOGLE_CLIENT_ID}
+          projectId={process.env.MEDPLUM_PROJECT_ID ? process.env.MEDPLUM_PROJECT_ID : ""}
+          googleClientId={process.env.MEDPLUM_GOOGLE_CLIENT_ID ? process.env.MEDPLUM_GOOGLE_CLIENT_ID : ""}
           onSuccess={() => navigate('/')}
         >
           <h2>Sign in to Foo Medical</h2>

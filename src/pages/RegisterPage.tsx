@@ -1,10 +1,10 @@
+import { BackgroundImage, Box, SimpleGrid } from '@mantine/core';
 import { RegisterForm } from '@medplum/react';
 import { useNavigate } from 'react-router-dom';
-import { Footer } from '../components/Footer';
+import { MEDPLUM_GOOGLE_CLIENT_ID, MEDPLUM_PROJECT_ID, MEDPLUM_RECAPTCHA_SITE_KEY } from '../config';
 
 export function RegisterPage(): JSX.Element {
   const navigate = useNavigate();
-
   return (
     <div id="signin" className="flex h-screen flex-col justify-between">
       <main>
@@ -22,9 +22,9 @@ export function RegisterPage(): JSX.Element {
             <div className="flex flex-col justify-between lg:pr-8">
               <RegisterForm
                 type="patient"
-                projectId={process.env.MEDPLUM_PROJECT_ID ? process.env.MEDPLUM_PROJECT_ID : ""}
-                googleClientId={process.env.MEDPLUM_GOOGLE_CLIENT_ID ? process.env.MEDPLUM_GOOGLE_CLIENT_ID : ""}
-                recaptchaSiteKey={process.env.MEDPLUM_RECAPTCHA_SITE_KEY ? process.env.MEDPLUM_RECAPTCHA_SITE_KEY : ""}              
+                projectId="9602358d-eeb0-4de8-bccf-e2438b5c9162"
+                googleClientId="679052511930-8dqur4mmg8egbttgos5pmr4ljtf3etbb.apps.googleusercontent.com"
+                recaptchaSiteKey="6LfFd_8gAAAAAOCVrZQ_aF2CN5b7s91NEYIu5GxL"
                 onSuccess={() => navigate('/')}
               >
                 <h2>Register with Foo Medical</h2>
